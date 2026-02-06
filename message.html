@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>A Special Message 💖</title>
+
+<style>
+body{
+  margin:0;
+  padding:30px;
+  font-family:'Trebuchet MS',sans-serif;
+  background:radial-gradient(circle at top,#1a1a2e,#0f0f1a);
+  color:#f8f8f8;
+  line-height:1.9;
+  overflow-x:hidden;
+}
+h1{
+  text-align:center;
+  color:#ff4d6d;
+}
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:18px;
+  animation:floatUp 6s linear forwards;
+}
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-110vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>A Message for You 💖</h1>
+
+<p>
+Aadi,<br><br>
+
+This is more than words on a screen.<br>
+It’s a feeling sent across distance.<br><br>
+
+You matter in ways you may not realize.<br>
+You bring calm, warmth, and meaning.<br><br>
+
+Some people touch hearts without trying.<br>
+You are one of them.<br><br>
+
+Always remember,<br>
+you are deeply appreciated.
+</p>
+
+<script>
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
+},400);
+</script>
+
+</body>
+</html>
