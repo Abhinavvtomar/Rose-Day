@@ -8,121 +8,121 @@
 <style>
 body{
   margin:0;
-  font-family:'Segoe UI', sans-serif;
-  background:linear-gradient(to bottom,#ffe6eb,#ffffff);
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(to bottom,#ffe6eb,#fff);
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
+  min-height:100vh;
 }
 
 .card{
   background:white;
+  width:92%;
+  max-width:420px;
   padding:25px;
   border-radius:22px;
   text-align:center;
-  box-shadow:0 12px 30px rgba(0,0,0,0.15);
-  max-width:360px;
-  width:92%;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
-h1{ color:#e63946; margin-bottom:6px; }
-h2{ font-size:18px; color:#333; margin-bottom:12px; }
-p{ color:#555; font-size:15px; }
+h1{
+  color:#e63946;
+  margin-bottom:5px;
+}
 
-button{
+.subtitle{
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+p{
+  color:#444;
+  font-size:15px;
+}
+
+.btn{
+  margin-top:15px;
   width:100%;
-  margin-top:10px;
-  padding:12px;
+  padding:14px;
   border:none;
-  border-radius:12px;
+  border-radius:30px;
+  font-size:16px;
   background:#e63946;
   color:white;
-  font-size:15px;
   cursor:pointer;
 }
-button:hover{ background:#d62828; }
 
-#message{
+.hidden{
+  display:none;
+}
+
+.reveal{
   margin-top:15px;
-  font-size:16px;
-  color:#222;
-  font-weight:500;
+  animation:fadeIn .6s ease-in-out;
+}
+
+img{
+  width:100%;
+  border-radius:16px;
+  margin-top:12px;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
 }
 
 .qr{
   margin-top:20px;
 }
-
-.qr img{
-  width:160px;
-}
-
-.scan{
-  margin-top:8px;
-  font-size:14px;
-  color:#e63946;
-  animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-  0%{opacity:1;}
-  50%{opacity:0.5;}
-  100%{opacity:1;}
-}
-
-.small{
-  font-size:13px;
-  color:#777;
-  margin-top:10px;
-}
 </style>
 </head>
 
 <body>
-
 <div class="card">
   <h1>🌹 Happy Rose Day 🌹</h1>
-  <h2>For Aadi ❤️</h2>
+  <div class="subtitle">For Aadi ❤️</div>
 
   <p>Distance may separate us, but love keeps us close.</p>
 
-  <button onclick="showMessage(1)">🌹 A Rose For You</button>
-  <button onclick="showMessage(2)">❤️ From My Heart</button>
-  <button onclick="showMessage(3)">💌 My Promise</button>
-  <button onclick="showFinal()">💖 Final Message</button>
-
-  <div id="message"></div>
-
-  <div id="final" style="display:none;">
-    <p style="margin-top:15px;font-weight:500;">
-      Aadi, I love you more than distance, more than words 💖
-    </p>
-
-    <div class="qr">
-      <img id="qrImg"
-        src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=YOUR_WEBSITE_LINK_HERE"
-        alt="Rose Day QR">
-      <div class="scan">🌹 Scan Me 🌹</div>
-    </div>
+  <button class="btn" onclick="show('rose')">🌹 A Rose For You</button>
+  <div id="rose" class="hidden reveal">
+    <p>This rose is a symbol of my love — timeless and true.</p>
   </div>
 
-  <p class="small">Made with ❤️ just for you</p>
+  <button class="btn" onclick="show('heart')">❤️ From My Heart</button>
+  <div id="heart" class="hidden reveal">
+    <p>Aadi, every beat of my heart whispers your name.</p>
+  </div>
+
+  <button class="btn" onclick="show('photo')">📸 Our Memory</button>
+  <div id="photo" class="hidden reveal">
+    <p>Tap and smile 😊</p>
+    <!-- 🔁 Replace image URL below with your photo -->
+    <img src="https://i.imgur.com/9Q9ZQZJ.jpeg" alt="Our Photo">
+  </div>
+
+  <button class="btn" onclick="show('promise')">💌 My Promise</button>
+  <div id="promise" class="hidden reveal">
+    <p>I promise to choose you — today, tomorrow, always 💞</p>
+  </div>
+
+  <button class="btn" onclick="show('final')">✨ Final Message</button>
+  <div id="final" class="hidden reveal">
+    <p><b>Aadi</b>, I love you more than distance, more than words 💖</p>
+  </div>
+
+  <div class="qr">
+    <p>🌹 Scan Me 🌹</p>
+    <!-- 🔁 Optional: Replace QR image -->
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=LoveYouAadi">
+  </div>
 </div>
 
 <script>
-function showMessage(n){
-  const m={
-    1:"This rose is for the girl who makes my life beautiful 🌹",
-    2:"No matter how far you are, my heart chooses you every day ❤️",
-    3:"One day I’ll give you this rose in person, I promise 💌"
-  };
-  document.getElementById("message").innerText=m[n];
-}
-
-function showFinal(){
-  document.getElementById("message").innerText="";
-  document.getElementById("final").style.display="block";
+function show(id){
+  document.getElementById(id).style.display="block";
 }
 </script>
 
