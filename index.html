@@ -14,7 +14,6 @@ body{
   overflow:hidden;
 }
 
-/* FULL PAGE CENTER */
 .container{
   height:100vh;
   display:flex;
@@ -26,31 +25,35 @@ body{
 
 h1{
   color:#ff4d6d;
-  margin-bottom:10px;
+  margin-bottom:12px;
+  font-size:34px;
 }
 
 p{
   margin-bottom:30px;
+  font-size:18px;
   opacity:0.9;
 }
-.btn{
-  margin:12px 0;
-  padding:16px;
-  width:80%;
-  max-width:320px;
-  font-size:18px;
+
+/* BIG BUTTONS — FORCED */
+button{
+  width:90vw;
+  max-width:420px;
+  padding:22px;
+  margin:14px 0;
+  font-size:21px;
+  font-weight:600;
   border:none;
-  border-radius:30px;
+  border-radius:40px;
   background:linear-gradient(135deg,#ff4d6d,#ff758f);
   color:white;
-
 }
 
 /* HEARTS */
 .heart{
   position:fixed;
   bottom:-10px;
-  font-size:18px;
+  font-size:20px;
   animation:floatUp 6s linear forwards;
   pointer-events:none;
 }
@@ -67,12 +70,12 @@ p{
   <h1>For Aadi ❤️</h1>
   <p>Tap gently and feel the love</p>
 
-  <button class="btn" onclick="location.href='memory.html'">💌 Our Memories</button>
-  <button class="btn" onclick="location.href='message.html'">💖 A Special Message</button>
-  <button class="btn" onclick="location.href='promise.html'">🌹 A Promise</button>
-  <button class="btn" onclick="location.href='countdown.html'">⏳ Rose Day Countdown</button>
-  <button class="btn" onclick="location.href='secret.html'">🔐 Final Surprise</button>
-  <button class="btn" onclick="location.href='qr.html'">📱 Share QR</button>
+  <button onclick="location.href='memory.html'">💌 Our Memories</button>
+  <button onclick="location.href='message.html'">💖 A Special Message</button>
+  <button onclick="location.href='promise.html'">🌹 A Promise</button>
+  <button onclick="location.href='countdown.html'">⏳ Rose Day Countdown</button>
+  <button onclick="location.href='secret.html'">🔐 Final Surprise</button>
+  <button onclick="location.href='qr.html'">📱 Share QR</button>
 </div>
 
 <script>
