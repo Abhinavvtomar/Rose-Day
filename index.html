@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Rose Day ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  background:linear-gradient(to bottom,#ffe6eb,#ffffff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+  max-width:360px;
+  width:92%;
+}
+
+h1{ color:#e63946; margin-bottom:6px; }
+h2{ font-size:18px; color:#333; margin-bottom:12px; }
+p{ color:#555; font-size:15px; }
+
+button{
+  width:100%;
+  margin-top:10px;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#e63946;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+}
+button:hover{ background:#d62828; }
+
+#message{
+  margin-top:15px;
+  font-size:16px;
+  color:#222;
+  font-weight:500;
+}
+
+.qr{
+  margin-top:20px;
+}
+
+.qr img{
+  width:160px;
+}
+
+.scan{
+  margin-top:8px;
+  font-size:14px;
+  color:#e63946;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{opacity:1;}
+  50%{opacity:0.5;}
+  100%{opacity:1;}
+}
+
+.small{
+  font-size:13px;
+  color:#777;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🌹 Happy Rose Day 🌹</h1>
+  <h2>For Aadi ❤️</h2>
+
+  <p>Distance may separate us, but love keeps us close.</p>
+
+  <button onclick="showMessage(1)">🌹 A Rose For You</button>
+  <button onclick="showMessage(2)">❤️ From My Heart</button>
+  <button onclick="showMessage(3)">💌 My Promise</button>
+  <button onclick="showFinal()">💖 Final Message</button>
+
+  <div id="message"></div>
+
+  <div id="final" style="display:none;">
+    <p style="margin-top:15px;font-weight:500;">
+      Aadi, I love you more than distance, more than words 💖
+    </p>
+
+    <div class="qr">
+      <img id="qrImg"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=YOUR_WEBSITE_LINK_HERE"
+        alt="Rose Day QR">
+      <div class="scan">🌹 Scan Me 🌹</div>
+    </div>
+  </div>
+
+  <p class="small">Made with ❤️ just for you</p>
+</div>
+
+<script>
+function showMessage(n){
+  const m={
+    1:"This rose is for the girl who makes my life beautiful 🌹",
+    2:"No matter how far you are, my heart chooses you every day ❤️",
+    3:"One day I’ll give you this rose in person, I promise 💌"
+  };
+  document.getElementById("message").innerText=m[n];
+}
+
+function showFinal(){
+  document.getElementById("message").innerText="";
+  document.getElementById("final").style.display="block";
+}
+</script>
+
+</body>
+</html>
