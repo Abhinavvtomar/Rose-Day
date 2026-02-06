@@ -2,129 +2,70 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Rose Day ❤️</title>
+<title>For Aadi ❤️</title>
 
 <style>
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(to bottom,#ffe6eb,#fff);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-}
-
-.card{
-  background:white;
-  width:92%;
-  max-width:420px;
-  padding:25px;
-  border-radius:22px;
+  background:radial-gradient(circle at top,#1a1a2e,#0f0f1a);
+  color:#f8f8f8;
   text-align:center;
-  box-shadow:0 15px 40px rgba(0,0,0,.15);
+  overflow-x:hidden;
 }
-
 h1{
-  color:#e63946;
-  margin-bottom:5px;
+  margin-top:60px;
+  color:#ff4d6d;
 }
-
-.subtitle{
-  font-size:18px;
-  margin-bottom:15px;
-}
-
 p{
-  color:#444;
-  font-size:15px;
+  opacity:0.9;
 }
-
 .btn{
-  margin-top:15px;
-  width:100%;
-  padding:14px;
+  display:block;
+  margin:25px auto;
+  padding:16px;
+  width:80%;
+  max-width:320px;
+  font-size:18px;
   border:none;
   border-radius:30px;
-  font-size:16px;
-  background:#e63946;
+  background:linear-gradient(135deg,#ff4d6d,#ff758f);
   color:white;
-  cursor:pointer;
 }
-
-.hidden{
-  display:none;
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:18px;
+  animation:floatUp 6s linear forwards;
+  pointer-events:none;
 }
-
-.reveal{
-  margin-top:15px;
-  animation:fadeIn .6s ease-in-out;
-}
-
-img{
-  width:100%;
-  border-radius:16px;
-  margin-top:12px;
-}
-
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(10px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-.qr{
-  margin-top:20px;
+@keyframes floatUp{
+  from{transform:translateY(0) scale(1);opacity:1;}
+  to{transform:translateY(-110vh) scale(1.6);opacity:0;}
 }
 </style>
 </head>
 
 <body>
-<div class="card">
-  <h1>🌹 Happy Rose Day 🌹</h1>
-  <div class="subtitle">For Aadi ❤️</div>
 
-  <p>Distance may separate us, but love keeps us close.</p>
+<h1>For Aadi ❤️</h1>
+<p>Tap gently and feel the love</p>
 
-  <button class="btn" onclick="show('rose')">🌹 A Rose For You</button>
-  <div id="rose" class="hidden reveal">
-    <p>This rose is a symbol of my love — timeless and true.</p>
-  </div>
-
-  <button class="btn" onclick="show('heart')">❤️ From My Heart</button>
-  <div id="heart" class="hidden reveal">
-    <p>Aadi, every beat of my heart whispers your name.</p>
-  </div>
-
-  <button class="btn" onclick="show('photo')">📸 Our Memory</button>
-  <div id="photo" class="hidden reveal" style="background:#fff;padding:15px;border-radius:16px;">
-  <p>Tap and smile 😊</p>
- <img src="IMG_1284.jpeg"
-     alt="Our Photo"
-     style="width:100%;border-radius:14px;display:block;">
-</div>
-
-  <button class="btn" onclick="show('promise')">💌 My Promise</button>
-  <div id="promise" class="hidden reveal">
-    <p>I promise to choose you — today, tomorrow, always 💞</p>
-  </div>
-
-  <button class="btn" onclick="show('final')">✨ Final Message</button>
-  <div id="final" class="hidden reveal">
-    <p><b>Aadi</b>, I love you more than distance, more than words 💖</p>
-  </div>
-
-  <div class="qr">
-    <p>🌹 Scan Me 🌹</p>
-    <!-- 🔁 Optional: Replace QR image -->
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=LoveYouAadi">
-  </div>
-</div>
+<button class="btn" onclick="location.href='memory.html'">💌 Our Memories</button>
+<button class="btn" onclick="location.href='message.html'">💖 A Special Message</button>
+<button class="btn" onclick="location.href='promise.html'">🌹 A Promise</button>
 
 <script>
-function show(id){
-  document.getElementById(id).style.display="block";
+function createHeart(){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(4+Math.random()*3)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
 }
+setInterval(createHeart,400);
 </script>
 
 </body>
