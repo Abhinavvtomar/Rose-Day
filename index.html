@@ -15,14 +15,14 @@ html, body{
   overflow:hidden;
 }
 
-/* FULL SCREEN LAYOUT */
+/* FULL SCREEN STRUCTURE */
 .screen{
   height:100vh;
   display:flex;
   flex-direction:column;
 }
 
-/* TITLE */
+/* TITLE AREA */
 .header{
   flex:1;
   display:flex;
@@ -31,27 +31,33 @@ html, body{
   text-align:center;
 }
 .header h1{
-  font-size:clamp(32px,8vw,48px);
+  font-size:clamp(30px,7vw,42px);
   color:#ff4d6d;
+  letter-spacing:1px;
 }
 
-/* BUTTONS TAKE MOST SPACE */
+/* BUTTON AREA */
 .buttons{
-  flex:4;
+  flex:3;
   display:flex;
   flex-direction:column;
-  justify-content:space-evenly;
+  gap:18px;
   padding:20px;
 }
 
 button{
-  height:15vh;
-  border:none;
-  border-radius:30px;
-  font-size:clamp(18px,5vw,26px);
+  padding:18px 20px;
+  font-size:clamp(17px,4.2vw,22px);
   font-weight:600;
+  border:none;
+  border-radius:28px;
   background:linear-gradient(135deg,#ff4d6d,#ff758f);
   color:white;
+  box-shadow:0 8px 20px rgba(255,77,109,0.35);
+}
+
+button:active{
+  transform:scale(0.96);
 }
 
 /* ROSE PETALS */
@@ -94,11 +100,11 @@ function createPetal(){
   p.className="petal";
   p.innerHTML="🌹";
   p.style.left=Math.random()*100+"vw";
-  p.style.animationDuration=(5+Math.random()*4)+"s";
+  p.style.animationDuration=(6+Math.random()*4)+"s";
   document.body.appendChild(p);
-  setTimeout(()=>p.remove(),9000);
+  setTimeout(()=>p.remove(),10000);
 }
-setInterval(createPetal,400);
+setInterval(createPetal,450);
 </script>
 
 </body>
